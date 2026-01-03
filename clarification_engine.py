@@ -7,7 +7,16 @@ from clarification_prompt import (
     build_clarification_prompt
 )
 
-tokenizer, model = load_llm()
+# llm_loader.py
+_model = None
+_tokenizer = None
+
+def get_llm():
+    global _model, _tokenizer
+    if _model is None:
+        _tokenizer, _model = load_llm()
+    return _tokenizer, _model
+
 
 def check_clarification(user_query: str, schema_json: dict) -> str:
     messages = [

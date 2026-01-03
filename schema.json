@@ -1,0 +1,41 @@
+{
+  "customers": {
+    "columns": {
+      "age": "INT",
+      "city": "VARCHAR",
+      "customer_id": "INT",
+      "name": "VARCHAR"
+    },
+    "primary_key": [
+      "customer_id"
+    ],
+    "foreign_keys": []
+  },
+  "orders": {
+    "columns": {
+      "amount": "DECIMAL",
+      "customer_id": "INT",
+      "order_date": "DATE",
+      "order_id": "INT",
+      "returned": "TINYINT",
+      "store_id": "INT"
+    },
+    "primary_key": [
+      "order_id"
+    ],
+    "foreign_keys": [
+      "customer_id \u2192 customers.customer_id",
+      "store_id \u2192 stores.store_id"
+    ]
+  },
+  "stores": {
+    "columns": {
+      "city": "VARCHAR",
+      "store_id": "INT"
+    },
+    "primary_key": [
+      "store_id"
+    ],
+    "foreign_keys": []
+  }
+}

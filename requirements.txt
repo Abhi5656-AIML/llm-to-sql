@@ -6,3 +6,6 @@ transformers>=4.30
 mysql-connector-python>=8.0
 uvicorn
 fastapi
+torch
+pydantic
+json
